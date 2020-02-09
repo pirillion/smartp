@@ -1,0 +1,18 @@
+
+- hosts: localhost
+  #remote_user: root
+  # remote_user: user
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Install WordPress MySQL, Nginx and PHP-FPM
+    command: cat /etc/lsb-release
+  - name: apache
+    command: sudo apt-get install apache2 -y
+  - name: libs
+    command: sudo apt-get install php7.0 php7.0-curl php7.0-mysql php7.0-mbstring php7.0-dom php7.0-gd -y
+  - name: php mods
+    command: sudo apt-get install libapache2-mod-php7.0 -y
+  - name: mysql client
+    command: sudo apt-get install mysql-client -y
+

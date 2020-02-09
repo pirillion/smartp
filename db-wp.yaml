@@ -1,0 +1,13 @@
+
+- hosts: localhost
+  #remote_user: root
+  # remote_user: user
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: Install WordPress MySQL
+    command: cat /etc/lsb-release
+  - name: mysql client
+    command: sudo apt-get install mysql-server mysql-client -y 
+
+
